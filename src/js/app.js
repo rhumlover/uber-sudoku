@@ -8,10 +8,22 @@ function App() {
       '/new': self.route_play('new')
     }
   });
+
+  this.Router.notfound = function() {
+    self.Router.setRoute('/');
+  };
+
+  PubSub.subscribe('router.goto', function(evt, data) {
+    self.Router.setRoute(data.route);
+  });
 }
 
 App.prototype.start = function() {
   this.Router.init();
+
+  if (_.isEmpty(location.hash)) {
+    this.Router.setRoute('/');
+  }
 };
 
 App.prototype.route_home = function() {
