@@ -19,6 +19,8 @@ function App() {
 }
 
 App.prototype.start = function() {
+  require('./screen-start')();
+
   this.Router.init();
 
   if (_.isEmpty(location.hash)) {
