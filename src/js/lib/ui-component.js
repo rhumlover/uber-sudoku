@@ -12,7 +12,7 @@ function UIComponent(options) {
   if (!rootEl) {
     rootEl = document.createElement('div');
   }
-  else if (typeof rootEl === 'string') {
+  else if (_.isString(rootEl)) {
     rootEl = document.querySelector(rootEl);
   }
 
