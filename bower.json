@@ -1,0 +1,34 @@
+{
+  "name": "uber-sudoku",
+  "version": "0.1.0",
+  "authors": [
+    "Thomas Le Jeune <thomastheyoung@gmail.com>"
+  ],
+  "description": "A Uber Sudoku.",
+  "main": "www/index.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "sudoku",
+    "javascript"
+  ],
+  "license": "MIT",
+  "homepage": "http://rhumlover.github.io/uber-sudoku",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "lodash": "~2.4.1",
+    "pubsub-js": "~1.5.0",
+    "director": "~1.2.2",
+    "fastclick": "~1.0.3"
+  }
+}
