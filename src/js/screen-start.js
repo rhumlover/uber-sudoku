@@ -7,7 +7,6 @@ StartScreen = function StartScreen() {
 
   instance = new UIComponent({
     el: '.screen--start',
-    template: JST['screen-start'],
 
     domEvents: {
       'click .button': function(e) {
