@@ -20,6 +20,7 @@ function App() {
 
 App.prototype.start = function() {
   require('./screen-start')();
+  require('./screen-board')();
 
   this.Router.init();
 
