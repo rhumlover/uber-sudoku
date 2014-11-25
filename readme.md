@@ -44,9 +44,31 @@ Organizing an app with modules helps you having a code with separate concerns, e
 Even if CommonJS was designed for the server at first, it has, for me, a much simpler and nicer syntax to use. Plus, we don't really need the asynchronous module loading that AMD provides, because we'll bundle our app into one file at the end, so all modules will just have to be declared and loaded. We could totally separate our app into asynchronously loaded modules, but we wouldn't need them on-the-fly. It's 'package' divided, one product at-a-time, not one functionality at-a-time.
 
 #### The UI Component
-It's the Controller of every UI object we want to handle. It's inspired by a Backbone View, with a main difference:
+It's the Controller of every separate interface object we want to handle. It's inspired by a Backbone View, with a main difference:
 
 we are in a game, and communication between components is critical to have the best real-time experience. Therefore, I wanted to have a native 'global ear' to the components by allowing them to react to a Facade object, sort of an Application Mediator. We cannot know what could trigger every interaction (ex, we might want to monitor the elapsed time of all games, to count every victory), so having the Components reacting directly from the Facade will help.
+
+While I wanted to not copy any existing framework, I tried, at first, to make some clean MVC functions, and made them listen to the DOM and to the Facade. It occurs that theses first prototypes were all doing the same thing, so I wanted to write a base class that would allow us to write the code more "declaratively", with less repeating `$(rootEl).on('click', ...)`
+
+#### Board Model
+It has to handle only the abstract matrix of the Sudoku. 0 dependencies, it doesn't know anything about who's instanciating it, who's playing with it, or anything about html. It's pure logic.
+
+Two main methods are available as startpoint:
+
+- `Board.create(size)`: create a new matrix game. For now, the result is always the same, but we have to take in account the possibility of creating a custom game, or generating a new one
+- `Board.load()`: load an existing matrix
+
+After an creation, the board provide several properties and methods:
+
+- `board.matrix`: the two-dimensional array containing our Sudoku grid
+- `board.isSolved()`: the big baby. Calculate if each row, column and square are valid
+- `board.set(row, cell, value)`: fill a cell based on its coordinates
+- `board.getRow(rowId)`: returns all row values based on its index (starts at 0)
+- `board.getColumn(colId)`: returns all column values based on its index (starts at 0)
+- `board.getSquare(row, cell)`: returns the square where the cell is living, based on its coordinates
+- `board.availableValuesForCell(row, cell)`: a little helper. Returns all possible numbers that are non conflicting with the cell's row, cell or square
+
+
 
 ### CSS
 
