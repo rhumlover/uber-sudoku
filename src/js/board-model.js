@@ -1,15 +1,59 @@
 var ROW_SUM = 1+2+3+4+5+6+7+8+9;
 
 function Board(matrix) {
+  this.size = 9;
   this.matrix = matrix;
+
+  this.remainingNumbers = (function(matrix) {
+    var remaining = 0,
+      _isZero = function(n) {
+        return n === 0;
+      };
+
+    matrix.forEach(function(row) {
+      remaining += row.filter(_isZero).length;
+    });
+
+    return remaining;
+  })(this.matrix);
 }
 
+
+// Private set of functions, manly helpers
+var _validate = function(array) {
+  var sum = _.flatten(array).reduce(function(prev, n, index, arr) {
+    return prev + n;
+  });
+  return sum === ROW_SUM;
+};
+
+
+// Starting creating our Board prototype
 Board.prototype.isSolved = function() {
-  return false;
+  var i = row = col = 0;
+
+  // We're gonna validte the board in 9*3 steps:
+  // 1) We check if each row's sum is correct
+  // 2) We check if each colmun's sum is correct
+  // 3) We check if each square's sum is correct
+  // Every falsy check breaks the loop and returns false
+  for (i; i < this.size; i++) {
+    if (!_validate(this.getRow(i))) return false;
+    if (!_validate(this.getColumn(i))) return false;
+
+    // Just a sweet tweak to get valid coordinates for each
+    // square on the board. With a 9-sized board, it will generate:
+    // 0x0, 3x0, 6x0, 0x3, 3x3, 6x3, 0x6, 3x6, 6x6
+    row = (i % 3) * 3;
+    col = ((i / 3) | 0) * 3;
+    if (!_validate(this.getSquare(row, col))) return false;
+  }
+  return true;
 };
 
 Board.prototype.set = function(row, cell, value) {
   this.matrix[row][cell] = value;
+  this.remainingNumbers--;
 };
 
 Board.prototype.getRow = function(rowIndex) {
