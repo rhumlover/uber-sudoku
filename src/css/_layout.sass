@@ -6,9 +6,11 @@ html
 
 *, *:before, *:after
   box-sizing: inherit
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  -webkit-tap-highlight-color: transparent /* For some Androids */
 
 body
-  background-color: white
+  background-color: #9E9E9E
 
 .title
   font-family: 'Lobster', cursive
@@ -27,13 +29,41 @@ body
   top: 50%
   transform: translateY(-50%)
 
-.vcenter
+.hcenter
   text-align: center
 
+%portrait
+  max-width: 415px
+  .aside, .section
+    float: left
+    display: inline-block
+
+  .aside
+    display: inherit
+    float: right
+    margin: 0
+    padding: 0
+
+    .fab
+      display: inherit
+
+%landscape
+  max-width: 740px
+  .aside, .section
+    float: none
 
 #app
   position: relative
-  overflow: hidden
   margin: auto
+  overflow: hidden
   background-color: $frontcolor_white
   @include box-shadow-helper(2)
+
+  @media (max-width: 740px) and (orientation: landscape)
+    @extend %landscape
+
+  @media (min-width: 741px) and (orientation: landscape)
+    @extend %portait
+
+  @media (min-width: 415px) and (orientation: portait)
+    @extend %portait
