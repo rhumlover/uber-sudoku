@@ -26,7 +26,7 @@ BoardScreen = function BoardScreen() {
 
     domEvents: {
       'click #keyboard .fab': function(e) {
-        var value = parseInt(e.srcElement.innerText, 10);
+        var value = parseInt(e.currentTarget.innerText, 10);
         PubSub.publish('keyboard.tap', { key: value });
       },
 
@@ -73,6 +73,10 @@ BoardScreen = function BoardScreen() {
       'board-view.cell-change': function(e, data) {
         this.boardModel.set(data.row, data.cell, data.value);
         this.saveGame();
+
+        if (this.boardModel.remainingNumbers === 0 && this.boardModel.isSolved()) {
+          alert('Congratulations! You just won an awesome game of Sudoku!');
+        }
       }
     },
 

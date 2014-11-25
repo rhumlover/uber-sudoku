@@ -6,7 +6,7 @@ BoardView = function BoardView(options) {
   if (instance) return instance;
 
   instance = new UIComponent({
-    el: '.ui-component--board-view',
+    el: '#board-view',
     template: JST['board-view'],
 
     init: function() {
@@ -27,7 +27,7 @@ BoardView = function BoardView(options) {
     },
 
     onCellClicked: function(e) {
-      var cell = e.srcElement,
+      var cell = e.currentTarget,
         position = cell.getAttribute('data-position').split('-');
 
       if (this.currentCell) {

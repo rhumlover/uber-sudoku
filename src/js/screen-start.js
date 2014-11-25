@@ -10,7 +10,8 @@ StartScreen = function StartScreen() {
 
     domEvents: {
       'click .button': function(e) {
-        var route = e.srcElement.getAttribute('data-route');
+        console.log(e);
+        var route = e.currentTarget.getAttribute('data-route');
         PubSub.publish('router.goto', {
           route: route
         });
