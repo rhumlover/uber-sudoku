@@ -1,13 +1,12 @@
 <header class="header--main title title--medium">Uber Sudoku</header>
-  <div class="screen__content">
+  <div class="screen__content hcenter">
 
-    <div class="ui-component--board-view"></div>
+    <div class="ui-component section" id="board-view"></div>
 
-    <div class="fab-group medium" id="keyboard">
+    <div class="fab-group medium aside" id="keyboard">
       {{~it.buttons :n:index}}
       <div class="fab blue" data-key="{{= n }}">{{= n }}</div>
       {{~}}
     </div>
 
 </div>
-
