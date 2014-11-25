@@ -57,45 +57,37 @@ body {
   background-color: #9E9E9E; }
 
 /* line 15, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
+header {
+  height: 50px;
+  line-height: 50px;
+  text-align: center; }
+
+/* line 20, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
 .title {
   font-family: 'Lobster', cursive; }
-  /* line 18, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
+  /* line 23, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
   .title--big {
     font-size: 3rem; }
-  /* line 21, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
+  /* line 26, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
   .title--medium {
     font-size: 2rem; }
-  /* line 24, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
+  /* line 29, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
   .title--small {
     font-size: 1rem; }
 
-/* line 27, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
+/* line 32, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
 .vcenter, .screen--start .screen__content {
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
 
-/* line 32, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
+/* line 37, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
 .hcenter, .screen--start .screen__content {
   text-align: center; }
 
-/* line 50, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
-#app {
-  max-width: 740px; }
-  /* line 52, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
-  #app .aside, #app .section {
-    float: none; }
-
-/* line 55, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
-#app {
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-  background-color: #fafafa;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
-  @media (max-width: 740px) and (orientation: landscape) { }
-  @media (min-width: 741px) and (orientation: landscape) { }
-  @media (min-width: 415px) and (orientation: portait) { }
+/* line 40, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_layout */
+.ui-component {
+  display: inline-block; }
 
 /* line 1, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_screen */
 .screen {
@@ -107,34 +99,6 @@ body {
   /* line 9, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_screen */
   .screen__content {
     padding: 20px; }
-
-/* line 12, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_screen */
-.screen--start {
-  background-color: #2196F3; }
-  /* line 15, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_screen */
-  .screen--start.is-inactive {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    -moz-transform: translate3d(-100%, 0, 0);
-    -ms-transform: translate3d(-100%, 0, 0);
-    -o-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0); }
-  /* line 18, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_screen */
-  .screen--start .title--big {
-    margin-top: -30px;
-    margin-bottom: 30px;
-    color: white;
-    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15); }
-  /* line 24, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_screen */
-  .screen--start .screen__content {
-    padding: none; }
-
-/* line 30, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_screen */
-.screen--board.is-inactive {
-  -webkit-transform: translate3d(100%, 0, 0);
-  -moz-transform: translate3d(100%, 0, 0);
-  -ms-transform: translate3d(100%, 0, 0);
-  -o-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0); }
 
 /* line 1, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_board */
 .board {
@@ -234,17 +198,53 @@ body {
     font-size: 0.8rem;
     font-weight: bold; }
 
-/* line 11, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
-header {
-  height: 50px;
-  line-height: 50px;
-  text-align: center; }
+/* line 25, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
+#app {
+  max-width: 740px; }
+  /* line 27, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
+  #app .aside, #app .section {
+    float: none; }
 
-/* line 16, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
+/* line 30, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
+#app {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  background-color: #fafafa;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  @media (max-width: 740px) and (orientation: landscape) { }
+  @media (min-width: 741px) and (orientation: landscape) { }
+  @media (min-width: 415px) and (orientation: portait) { }
+
+/* line 47, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
 .header--main {
   background-color: #2196F3;
   color: #fafafa; }
 
-/* line 21, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
-.ui-component {
-  display: inline-block; }
+/* line 53, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
+.screen--start {
+  background-color: #2196F3; }
+  /* line 56, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
+  .screen--start.is-inactive {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); }
+  /* line 59, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
+  .screen--start .title--big {
+    margin-top: -30px;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15); }
+  /* line 65, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
+  .screen--start .screen__content {
+    padding: none; }
+
+/* line 71, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
+.screen--board.is-inactive {
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0); }
