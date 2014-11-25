@@ -1,0 +1,39 @@
+html, body, #app
+  height: 100%
+
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
+
+body
+  background-color: white
+
+.title
+  font-family: 'Lobster', cursive
+
+  &--big
+    font-size: 3rem
+
+  &--medium
+    font-size: 2rem
+
+  &--small
+    font-size: 1rem
+
+.vcenter
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+
+.vcenter
+  text-align: center
+
+
+#app
+  position: relative
+  overflow: hidden
+  margin: auto
+  background-color: $frontcolor_white
+  @include box-shadow-helper(2)

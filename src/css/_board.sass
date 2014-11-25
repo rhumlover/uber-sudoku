@@ -1,0 +1,43 @@
+.board
+  display: table
+  margin: auto
+  border: solid 1px $backcolor_grey
+  border-radius: 4px
+
+  &__row
+    position: relative
+    width: 100%
+    border-bottom: solid 1px $backcolor_grey
+
+    &:nth-child(3n)
+      border-bottom: solid 2px $backcolor_grey
+
+    &:last-child
+      border-bottom: none
+
+  &__cell
+    display: table-cell
+    vertical-align: middle
+    text-align: center
+    background-color: $backcolor_grey_dark
+    border-right: solid 1px $backcolor_grey
+
+    $size: 30px
+    width: $size
+    height: $size
+    line-height: $size
+
+    &:empty
+      background-color: $frontcolor_white
+
+    &:nth-child(3n)
+      border-right: solid 2px $backcolor_grey
+
+    &:last-child
+      border-right: none
+
+    &:hover
+      @extend .is-highlight
+
+    &:focus
+      @extend .is-highlight

@@ -1,0 +1,31 @@
+$frontcolor_black: #333
+$frontcolor_white: #fafafa
+
+$backcolor_red: #d23f31
+$backcolor_grey: #607d8b
+$backcolor_grey_dark: #eaeaea
+$backcolor_blue: #2196F3
+$backcolor_green: #8BC34A
+$backcolor_orange: #ff5722
+$backcolor_yellow: #FFEA00
+
+.grey
+  background-color: $backcolor_grey
+
+.blue
+  background-color: $backcolor_blue
+  color: $frontcolor_white
+
+.green
+  background-color: $backcolor_green
+  color: $frontcolor_black
+
+.yellow
+  background-color: $backcolor_yellow
+  color: $frontcolor_black
+
+.is-highlight
+  @include ui-transition(background-color)
+  @include transform(translate3d(0,0,0))
+  background-color: $backcolor_orange !important
+  color: $frontcolor_white !important
