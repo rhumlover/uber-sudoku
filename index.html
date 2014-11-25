@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Uber Sudoku</title>
+    <meta name="description" content="It's a sudoku, basically. But an awesome one.">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+
+      <div class="screen screen--start">
+        <div class="screen__content">
+
+          <div class="title title--big">Uber Sudoku</div>
+
+          <div class="button-group">
+            <div class="button green" data-route="/play/resume">RESUME GAME</div>
+            <div class="button yellow" data-route="/play/new">NEW GAME</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="screen screen--board is-inactive"></div>
+    </div>
+
+    <script src="templates/templates.js"></script>
+    <script src="js/vendor/vendors.js"></script>
+    <script src="js/app.js" defer></script>
+    <script>
+      $(function() {
+        FastClick.attach(document.body);
+      });
+    </script>
+  </body>
+</html>
