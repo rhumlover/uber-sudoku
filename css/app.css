@@ -10,7 +10,7 @@
   transition: transform 500ms cubic-bezier(0.694, 0.0482, 0.335, 1); }
 
 /* line 40, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_mixins */
-.board, .button, .fab {
+.board, .button, .fab, .header--main {
   cursor: pointer; }
 
 /* line 12, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/_colors */
@@ -245,6 +245,6 @@ header {
   background-color: #2196F3;
   color: #fafafa; }
 
-/* line 20, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
+/* line 21, /Users/tlejeune/Dropbox/htdocs/uber-sudoku/src/css/main.sass */
 .ui-component {
   display: inline-block; }
