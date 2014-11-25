@@ -350,7 +350,7 @@
 
 	    domEvents: {
 	      'click #keyboard .fab': function(e) {
-	        var value = parseInt(e.currentTarget.innerText, 10);
+	        var value = parseInt(e.currentTarget.innerHTML, 10);
 	        PubSub.publish('keyboard.tap', { key: value });
 	      },
 
