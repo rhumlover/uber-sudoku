@@ -12,6 +12,11 @@ html
 body
   background-color: #9E9E9E
 
+header
+  height: 50px
+  line-height: 50px
+  text-align: center
+
 .title
   font-family: 'Lobster', cursive
 
@@ -32,38 +37,5 @@ body
 .hcenter
   text-align: center
 
-%portrait
-  max-width: 415px
-  .aside, .section
-    float: left
-    display: inline-block
-
-  .aside
-    display: inherit
-    float: right
-    margin: 0
-    padding: 0
-
-    .fab
-      display: inherit
-
-%landscape
-  max-width: 740px
-  .aside, .section
-    float: none
-
-#app
-  position: relative
-  margin: auto
-  overflow: hidden
-  background-color: $frontcolor_white
-  @include box-shadow-helper(2)
-
-  @media (max-width: 740px) and (orientation: landscape)
-    @extend %landscape
-
-  @media (min-width: 741px) and (orientation: landscape)
-    @extend %portait
-
-  @media (min-width: 415px) and (orientation: portait)
-    @extend %portait
+.ui-component
+  display: inline-block
